@@ -6,7 +6,7 @@
 # Partie 1
 Service Calcule
     1- vm => ec2
-    2- conteneur
+    2- conteneur => ecr, ecs
     3- cluster kubernetes
     4- Serverless
 
