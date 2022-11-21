@@ -8,4 +8,10 @@ docker build -t <host/nom_image:tag> <chemin_vers_dockerfile>
 docker tag <image_local> <repos_aws>
 
 ## Connecter docker cli à notre ecr
-aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin <accountId>.dkr.ecr.<region>.amazonaws.com
+aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin 639962416620.dkr.ecr.<region>.amazonaws.com
+
+## push vers ecr
+docker push tag
+
+## pour récupérer les logs d'un container
+docker log <id Ou nom container>
