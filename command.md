@@ -15,3 +15,12 @@ docker push tag
 
 ## pour récupérer les logs d'un container
 docker log <id Ou nom container>
+
+## Commande pour créer un context ecs
+docker context create ecs <nom_context>
+
+## commande pour utiliser un context
+docker context use <nom_context>
+
+## commande pour démarrer des conteneurs à l'aide de docker compose
+docker compose up

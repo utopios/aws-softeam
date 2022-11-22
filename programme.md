@@ -7,7 +7,7 @@
 Service Calcule
     1- vm => ec2
     2- conteneur => ecr, ecs
-    3- cluster kubernetes
+    3- cluster kubernetes => fargate => ecs
     4- Serverless
 
 # Partie 2
