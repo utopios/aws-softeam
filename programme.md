@@ -8,7 +8,7 @@ Service Calcule
     1- vm => ec2
     2- conteneur => ecr, ecs
     3- cluster kubernetes => fargate => ecs
-    4- Serverless
+    4- Serverless => aws lambda, aws Amplify
 
 # Partie 2
 Service d'utilisation d'event de stream

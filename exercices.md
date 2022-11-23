@@ -14,3 +14,7 @@ A l'aide de docker compose déployer l'application vote-maison dans un cluster e
 2. publication des images sur ecr
 3. modification de docker-compose en ajoutant les noms des images
 4. Créer l'application à l'aide de fargate et docker compose 
+
+# exercice 3 amplify
+Déployer une application front de votre choix(React, angular, vuejs...) sur aws amplifiy
+
