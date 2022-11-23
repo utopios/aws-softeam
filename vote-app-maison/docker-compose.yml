@@ -1,20 +1,20 @@
 version: "3.9"
 services: 
     redis:
-        image: redis:5.0-alpine3.10
+        image: 639962416620.dkr.ecr.eu-west-1.amazonaws.com/redis:5.0-alpine3.10
         networks: 
             - redis-network
-        volumes:
-            - "./redis-check:/redis-check"
+        # volumes:
+        #     - "./redis-check:/redis-check"
         healthcheck:
             test: /redis-check/script.sh
             interval: "5s"
     
     db:
-        image: postgres:9.4
-        volumes: 
-            - "data-postgres:/var/lib/postgresql/data"
-            - "./postgres-check:/postgrescheck"
+        image: 639962416620.dkr.ecr.eu-west-1.amazonaws.com/postgres:9.4
+        # volumes: 
+        #     - "data-postgres:/var/lib/postgresql/data"
+        #     - "./postgres-check:/postgrescheck"
         environment: 
             POSTGRES_USER: "postgres"
             POSTGRES_PASSWORD: "postgres"
@@ -25,7 +25,7 @@ services:
             interval: "5s"
 
     vote:
-        build: ./vote
+        image: 639962416620.dkr.ecr.eu-west-1.amazonaws.com/vote
         ports:  
             - "8080:80"
         depends_on: 
@@ -34,7 +34,7 @@ services:
             - redis-network
 
     result:
-        build: ./result
+        image: 639962416620.dkr.ecr.eu-west-1.amazonaws.com/result
         ports:
             - "4000:4000"
         depends_on: 
@@ -43,7 +43,7 @@ services:
             - postgres-network
 
     worker:
-        build: ./worker
+        image: 639962416620.dkr.ecr.eu-west-1.amazonaws.com/worker
         depends_on: 
             redis:
                 condition: service_healthy
@@ -53,8 +53,8 @@ services:
             - postgres-network
             - redis-network
 
-volumes: 
-    data-postgres:
+# volumes: 
+#     data-postgres:
 
 networks: 
     postgres-network:
